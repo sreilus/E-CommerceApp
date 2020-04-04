@@ -23,6 +23,7 @@ namespace ShopApp.DataAccess.Concrete.EfCore
 				if (context.Products.Count() == 0)
 				{
 					context.Products.AddRange(Products);
+					context.AddRange(ProductCategory);
 				}
 
 				context.SaveChanges();
@@ -38,6 +39,10 @@ namespace ShopApp.DataAccess.Concrete.EfCore
 			new Category()
 			{
 				Name="Bilgisayar"
+			},
+			new Category()
+			{
+				Name="Elektronik"
 			}
 		};
 
@@ -47,39 +52,57 @@ namespace ShopApp.DataAccess.Concrete.EfCore
 			{
 				Name="Samsung S5",
 				Price=2000,
-				ImageUrl="1.jpg"
+				ImageUrl="1.jpg",
+				Description="<p>Güzel telefon</p>"
 			},new Product()
 			{
 				Name="Samsung S6",
 				Price=2100,
-				ImageUrl="1.jpg"
+				ImageUrl="1.jpg",
+				Description="<p>Güzel telefon</p>"
 			},new Product()
 			{
 				Name="Samsung S7",
 				Price=2200,
-				ImageUrl="1.jpg"
+				ImageUrl="1.jpg",
+				Description="<p>Güzel telefon</p>"
 			},new Product()
 			{
 				Name="Samsung S8",
 				Price=2300,
-				ImageUrl="4.jpg"
+				ImageUrl="4.jpg",
+				Description="<p>Güzel telefon</p>"
 			},new Product()
 			{
 				Name="Samsung S9",
 				Price=2400,
-				ImageUrl="3.jpg"
+				ImageUrl="3.jpg",
+				Description="<p>Güzel telefon</p>"
 			},new Product()
 			{
 				Name="Samsung S10",
 				Price=2500,
-				ImageUrl="5.jpg"
+				ImageUrl="5.jpg",
+				Description="<p>Güzel telefon</p>"
 			},new Product()
 			{
 				Name="Samsung S10",
 				Price=2600,
-				ImageUrl="1.jpg"
+				ImageUrl="1.jpg",
+				Description="<p>Güzel telefon</p>"
 			}
 		};
-		
+
+		private static ProductCategory[] ProductCategory =
+		{
+			new ProductCategory() {Product=Products[0],Category=Categories[0]},
+			new ProductCategory() {Product=Products[0],Category=Categories[2]},
+			new ProductCategory() {Product=Products[1],Category=Categories[0]},
+			new ProductCategory() {Product=Products[1],Category=Categories[1]},
+			new ProductCategory() {Product=Products[2],Category=Categories[0]},
+			new ProductCategory() {Product=Products[2],Category=Categories[2]},
+			new ProductCategory() {Product=Products[3],Category=Categories[1]}
+		};
+
 	}
 }
